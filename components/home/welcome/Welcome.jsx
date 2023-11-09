@@ -9,7 +9,10 @@ const Welcome = () => {
   const router = useRouter();
   return (
     <View>
-      <Text>Welcome</Text>
+      <View style={styles.container}>
+        <Text style={styles.userName}>Hello Sibs</Text>
+        <Text style={styles.welcomeMessage}>Find your perfect job</Text>
+      </View>
     </View>
   );
 };
