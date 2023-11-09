@@ -1,5 +1,6 @@
 ﻿import { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, SafeAreaView } from 'react-native';
+import { Stack, useRouter } from 'expo-router';
 
 const Home = () => {
   return (
