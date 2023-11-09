@@ -34,6 +34,8 @@ const Home = () => {
         }}
       >
         <Welcome />
+        <Popularjobs />
+        <Nearbyjobs />
       </ScrollView>
     </SafeAreaView>
   );
