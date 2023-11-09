@@ -25,6 +25,16 @@ const Home = () => {
           headerTitle: '',
         }}
       />
+
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        style={{
+          flex: 1,
+          padding: SIZES.medium,
+        }}
+      >
+        <Welcome />
+      </ScrollView>
     </SafeAreaView>
   );
 };
