@@ -38,4 +38,9 @@ export const useFetch = (endpoint, query) => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const refresh = () => {
+    setLoading(false);
+    fetchData();
+  };
 };
