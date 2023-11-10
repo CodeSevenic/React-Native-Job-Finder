@@ -31,6 +31,7 @@ const Welcome = () => {
           <Image source={icons.search} resizeMode="contain" style={styles.searchBtnImage} />
         </TouchableOpacity>
       </View>
+
       <View style={styles.tabsContainer}>
         <FlatList
           data={jobTypes}
