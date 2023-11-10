@@ -40,7 +40,7 @@ export const useFetch = (endpoint, query) => {
   }, []);
 
   const refresh = () => {
-    setLoading(false);
+    setLoading(true);
     fetchData();
   };
 };
