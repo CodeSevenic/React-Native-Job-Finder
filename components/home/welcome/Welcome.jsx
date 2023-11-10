@@ -44,11 +44,12 @@ const Welcome = () => {
                   router.push(`/search/${item}`);
                 }}
               >
-                <Text>{item}</Text>
+                <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
               </TouchableOpacity>
             );
           }}
-        ></FlatList>
+          keyExtractor={(item) => item}
+        />
       </View>
     </View>
   );
