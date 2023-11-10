@@ -34,4 +34,8 @@ export const useFetch = (endpoint, query) => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 };
