@@ -15,7 +15,7 @@ const Popularjobs = () => {
     num_pages: 1,
   });
 
-  console.log('DATA: ', data);
+  // console.log('DATA: ', data);
   // console.log('ERROR: ', error);
 
   return (
