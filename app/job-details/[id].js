@@ -28,6 +28,10 @@ const JobDetails = () => {
   //   job_id: params.id,
   // });
 
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = () => {};
+
   console.log('Job Details Component rendered');
 
   return (
@@ -47,7 +51,11 @@ const JobDetails = () => {
           headerRight: () => <ScreenHeaderBtn iconUrl={icons.share} dimension="60%" />,
           headerTitle: '',
         }}
-      ></Stack.Screen>
+      >
+        <>
+          <ScrollView showsVerticalScrollIndicator={false}></ScrollView>
+        </>
+      </Stack.Screen>
     </SafeAreaView>
   );
 };
