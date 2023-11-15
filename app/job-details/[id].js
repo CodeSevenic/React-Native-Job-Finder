@@ -21,18 +21,19 @@ import { COLORS, icons, SIZES } from '../../constants';
 import useFetch from '../../hook/useFetch';
 
 const JobDetails = () => {
-  const params = useGlobalSearchParams();
-  console.log(params.id);
+  const params = useSearchParams();
+  // console.log(params.id);
   const router = useRouter();
-  // const { data, isLoading, error, refetch } = useFetch(`jobs-details`, {
-  //   job_id: params.id,
-  // });
+
+  const { data, isLoading, error, refetch } = useFetch('job-details', {
+    job_id: params.id,
+  });
 
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = () => {};
 
-  console.log('Job Details Component rendered');
+  console.log('isLoading: ', isLoading, 'error: ', error, 'data: ', data);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -51,11 +52,27 @@ const JobDetails = () => {
           headerRight: () => <ScreenHeaderBtn iconUrl={icons.share} dimension="60%" />,
           headerTitle: '',
         }}
-      >
-        <>
-          <ScrollView showsVerticalScrollIndicator={false}></ScrollView>
-        </>
-      </Stack.Screen>
+      />
+      <>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+        >
+          {isLoading ? (
+            <ActivityIndicator size="large" color={COLORS.primary} />
+          ) : error ? (
+            <Text>Something went wrong</Text>
+          ) : data.length === 0 ? (
+            <Text>No data available</Text>
+          ) : (
+            <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
+              <Company />
+
+              <JobTabs />
+            </View>
+          )}
+        </ScrollView>
+      </>
     </SafeAreaView>
   );
 };
