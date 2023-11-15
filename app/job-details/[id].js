@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
   RefreshControl,
 } from 'react-native';
-import { Stack, useRouter, useSearchParams } from 'expo-router';
+import { Stack, useRouter, useSearchParams, useGlobalSearchParams } from 'expo-router';
 
 import {
   Company,
@@ -21,6 +21,11 @@ import { COLORS, icons, SIZES } from '../../constants';
 import useFetch from '../../hook/useFetch';
 
 const JobDetails = () => {
+  const params = useGlobalSearchParams();
+  const router = useRouter();
+  const { data, isLoading, error, refetch } = useFetch(`jobs-details`, {
+    job_id: params.id,
+  });
   return <Text>JobDetails</Text>;
 };
 
