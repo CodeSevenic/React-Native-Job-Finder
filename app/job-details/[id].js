@@ -20,6 +20,8 @@ import {
 import { COLORS, icons, SIZES } from '../../constants';
 import useFetch from '../../hook/useFetch';
 
+const tabs = ['About', 'Qualifications', 'Responsibilities'];
+
 const JobDetails = () => {
   const params = useSearchParams();
   // console.log(params.id);
@@ -30,6 +32,7 @@ const JobDetails = () => {
   });
 
   const [refreshing, setRefreshing] = useState(false);
+  const [activeTab, setActiveTab] = useState(tabs[0]);
 
   const onRefresh = () => {};
 
