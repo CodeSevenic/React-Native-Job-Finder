@@ -18,7 +18,7 @@ const Tabs = ({ tabs, activeTab, setActiveTab }) => {
             onHandleSearchType={() => setActiveTab(item)}
           />
         )}
-      ></FlatList>
+      />
     </View>
   );
 };
