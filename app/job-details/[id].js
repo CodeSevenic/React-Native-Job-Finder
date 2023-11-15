@@ -76,7 +76,7 @@ const JobDetails = () => {
                 location={data[0].job_country}
               />
 
-              <JobTabs />
+              <JobTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
             </View>
           )}
         </ScrollView>
