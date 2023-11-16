@@ -9,16 +9,12 @@ import { useFetch } from '../../../hook/useFetch';
 
 const Popularjobs = () => {
   const router = useRouter();
-
   const { data, isLoading, error } = useFetch('search', {
     query: 'React developer',
     num_pages: 1,
   });
 
   const [selectedJob, setSelectedJob] = useState(null);
-
-  // console.log('DATA: ', data);
-  // console.log('ERROR: ', error);
 
   const handleCardPress = (item) => {
     router.push(`/job-details/${item.job_id}`);
